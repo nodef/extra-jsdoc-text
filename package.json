@@ -1,0 +1,41 @@
+{
+  "name": "extra-jsdoc-text",
+  "version": "0.1.1",
+  "description": "Utilities for processing JSDoc text.",
+  "main": "index.js",
+  "module": "index.mjs",
+  "sideEffects": false,
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
+  "scripts": {
+    "test": "exit",
+    "build": "node ./build",
+    "deploy": "node ./build deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodef/extra-jsdoc-text.git"
+  },
+  "keywords": [
+    "extra",
+    "jsdoc",
+    "text",
+    "utility"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/nodef/extra-jsdoc-text/issues"
+  },
+  "homepage": "https://github.com/nodef/extra-jsdoc-text#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.3",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@types/node": "^17.0.23",
+    "extra-build": "^2.0.29",
+    "rollup-plugin-cleanup": "^3.2.1",
+    "rollup-plugin-dts": "^4.2.0"
+  }
+}
