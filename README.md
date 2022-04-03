@@ -15,45 +15,51 @@ is exposed as `extra_jsdoc_text` standalone variable and can be loaded from
 <br>
 
 ```javascript
-const fs    = require('fs');
 const jsdoc = require('extra-jsdoc-text');
 
 function main() {
-  var txt = fs.readFileSync('README.md', 'utf8').replace(/\r?\n/, '\n');
+  var txt = `
+/**
+ * Parse jsdoc from jsdoc text.
+ * @param txt jsdoc text
+ * @returns parsed jsdoc
+ */
+  `, parse = null;
 
-  jsdoc.links(txt);
-  // [
-  //   {
-  //     full: '[Node.js](https://www.npmjs.com/package/extra-jsdoc-text)',
-  //     name: 'Node.js',
-  //     reference: '',
-  //     url: 'https://www.npmjs.com/package/extra-jsdoc-text'
+  parse = jsdoc.parse(txt);
+  // {
+  //   full: '\n' +
+  //     '/**\n' +
+  //     ' * Parse jsdoc from jsdoc text.\n' +
+  //     ' * @param txt jsdoc text\n' +
+  //     ' * @returns parsed jsdoc\n' +
+  //     ' */\n' +
+  //     '  ',
+  //   description: 'Parse jsdoc from jsdoc text.\n',
+  //   params: [
+  //     {
+  //       full: '@param txt jsdoc text',
+  //       name: 'txt',
+  //       type: '',
+  //       description: 'jsdoc text'
+  //     }
+  //   ],
+  //   returns: {
+  //     full: '@returns parsed jsdoc',
+  //     type: '',
+  //     description: 'parsed jsdoc'
   //   },
-  //   {
-  //     full: '[Web](https://www.npmjs.com/package/extra-jsdoc-text.web)',
-  //     name: 'Web',
-  //     reference: '',
-  //     url: 'https://www.npmjs.com/package/extra-jsdoc-text.web'
-  //   },
-  //   ...
-  // ]
+  //   examples: []
+  // }
 
-  jsdoc.linkReferences(txt);
-  // [
-  //   {
-  //     full: '[jsDelivr CDN]: https://cdn.jsdelivr.net/npm/extra-jsdoc-text.web/index.js',
-  //     name: 'jsDelivr CDN',
-  //     url: 'https://cdn.jsdelivr.net/npm/extra-jsdoc-text.web/index.js',
-  //     title: ''
-  //   },
-  //   {
-  //     full: '[forEachCodeBlock]: https://nodef.github.io/extra-jsdoc-text/modules.html#forEachCodeBlock',
-  //     name: 'forEachCodeBlock',
-  //     url: 'https://nodef.github.io/extra-jsdoc-text/modules.html#forEachCodeBlock',
-  //     title: ''
-  //   },
-  //   ...
-  // ]
+  parse.description += ' (only if simple)';
+  jsdoc.stringify(parse);
+  // '/**\n' +
+  //   ' * Parse jsdoc from jsdoc text.\n' +
+  //   ' * (only if simple)\n' +
+  //   ' * @param txt jsdoc text\n' +
+  //   ' * @returns parsed jsdoc\n' +
+  //   ' *  */\n'
 }
 main();
 ```
@@ -66,11 +72,15 @@ main();
 
 | Property | Description |
 |  ----  |  ----  |
-| [forEachCodeBlock] | Match code blocks in markdown text. |
+| [parse] | Parse jsdoc from jsdoc text. |
+| [stringify] | Stringify jsdoc text from parsed jsdoc. |
 
 <br>
 <br>
 
-[![](https://img.youtube.com/vi/bJirgZjBqNg/maxresdefault.jpg)](https://www.youtube.com/watch?v=bJirgZjBqNg)
 
-[forEachCodeBlock]: https://nodef.github.io/extra-jsdoc-text/modules.html#forEachCodeBlock
+[![](https://img.youtube.com/vi/dEGrVjb2dB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=dEGrVjb2dB4)
+
+
+[parse]: https://nodef.github.io/extra-jsdoc-text/modules.html#parse
+[stringify]: https://nodef.github.io/extra-jsdoc-text/modules.html#stringify

@@ -55,10 +55,15 @@ export interface ReturnsTag {
 
 /** JSDoc details. */
 export interface Jsdoc {
+  /** Full JSDoc. */
   full: string,
+  /** JSDoc description. */
   description: string,
+  /** JSDoc params. */
   params: ParamTag[],
+  /** JSDoc returns. */
   returns: ReturnsTag,
+  /** JSDoc examples. */
   examples: string[],
 }
 
