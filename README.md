@@ -79,7 +79,8 @@ main();
 <br>
 
 
-[![](https://img.youtube.com/vi/dEGrVjb2dB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=dEGrVjb2dB4)
+[![](https://img.youtube.com/vi/dEGrVjb2dB4/maxresdefault.jpg)](https://www.youtube.com/watch?v=dEGrVjb2dB4)<br>
+[![DOI](https://zenodo.org/badge/477219250.svg)](https://zenodo.org/badge/latestdoi/477219250)
 
 
 [parse]: https://nodef.github.io/extra-jsdoc-text/modules.html#parse
