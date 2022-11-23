@@ -16,8 +16,10 @@ function undecorate(txt: string): string {
  * @returns jsdoc text
  */
 function decorate(txt: string): string {
-  txt = txt.split('\n').map(l => ' * ' + l.trim()).join('\n');
-  return '/**\n' + txt + ' */\n';
+  var txt = txt.trim();
+  if (!txt.includes('\n')) return `/** ${txt} */`;
+  var txt = txt.split('\n').map(l => ' * ' + l.trim()).join('\n');
+  return `/**\n${txt}\n */`;
 }
 
 
