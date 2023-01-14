@@ -1,6 +1,6 @@
 {
   "name": "extra-jsdoc-text",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Utilities for processing JSDoc text.",
   "main": "index.js",
   "module": "index.mjs",
@@ -31,11 +31,11 @@
   },
   "homepage": "https://github.com/nodef/extra-jsdoc-text#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.2",
+    "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@types/node": "^18.11.9",
-    "extra-build": "^2.2.36",
+    "@types/node": "^18.11.18",
+    "extra-build": "^2.2.40",
     "rollup-plugin-cleanup": "^3.2.1",
-    "rollup-plugin-dts": "^5.0.0"
+    "rollup-plugin-dts": "^5.1.1"
   }
 }
