@@ -4,9 +4,9 @@ Utilities for processing JSDoc text.<br>
 📜 [Files](https://unpkg.com/extra-jsdoc-text/),
 📰 [Docs](https://nodef.github.io/extra-jsdoc-text/).
 
-This package is available in both *Node.js* and *Web* formats. The web format
-is exposed as `extra_jsdoc_text` standalone variable and can be loaded from
-[jsDelivr CDN].
+This package is available in *Node.js* and *Web* formats. To use it on the web,
+simply use the `extra_jsdoc_text` global variable after loading with a `<script>`
+tag from the [jsDelivr CDN].
 
 > Stability: [Experimental](https://www.youtube.com/watch?v=L1j93RnIxEo).
 
@@ -15,7 +15,7 @@ is exposed as `extra_jsdoc_text` standalone variable and can be loaded from
 <br>
 
 ```javascript
-const jsdoc = require('extra-jsdoc-text');
+const xjsdoc = require('extra-jsdoc-text');
 
 function main() {
   var txt = `
@@ -26,7 +26,7 @@ function main() {
  */
   `, parse = null;
 
-  parse = jsdoc.parse(txt);
+  parse = xjsdoc.parse(txt);
   // {
   //   full: '\n' +
   //     '/**\n' +
@@ -53,7 +53,7 @@ function main() {
   // }
 
   parse.description += ' (only if simple)';
-  jsdoc.stringify(parse);
+  xjsdoc.stringify(parse);
   // '/**\n' +
   //   ' * Parse jsdoc from jsdoc text.\n' +
   //   ' * (only if simple)\n' +
